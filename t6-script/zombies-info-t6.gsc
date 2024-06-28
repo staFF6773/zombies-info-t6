@@ -25,7 +25,7 @@ healthCounter(){
     level endon( "end_game" );
     common_scripts\utility::flag_wait( "initial_blackscreen_passed" );
     self.healthText = maps\mp\gametypes_zm\_hud_util::createFontString ("hudsmall", 1.5);
-    self.healthText maps\mp\gametypes_zm\_hud_util::setPoint ("CENTER", "CENTER", 100, 180);
+    self.healthText maps\mp\gametypes_zm\_hud_util::setPoint ("CENTER", "CENTER", 50, 200); // Ajusta las coordenadas aquí
     self.healthText.label = &"Health: ^2";
     while ( 1 ) {
         self.healthText setValue(self.health);
@@ -46,7 +46,7 @@ zombie_counter(){
     self endon("disconnect");
     flag_wait( "initial_blackscreen_passed" );
     self.zombiecounter = createfontstring( "Objective", 1.7 );
-    self.zombiecounter setpoint( "CENTER", "CENTER", 0, 200 );
+    self.zombiecounter setpoint( "CENTER", "CENTER", -50, 200 ); // Ajusta las coordenadas aquí
     self.zombiecounter.alpha = 1;
     self.zombiecounter.hidewheninmenu = 1;
     self.zombiecounter.hidewhendead = 1;
