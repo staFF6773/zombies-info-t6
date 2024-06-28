@@ -16,6 +16,20 @@ onPlayerConnect()
     {
         level waittill( "connecting", player );
         player thread onplayerspawned();
+        player thread healthCounter();
+    }
+}
+
+healthCounter(){
+    self endon ("disconnect");
+    level endon( "end_game" );
+    common_scripts\utility::flag_wait( "initial_blackscreen_passed" );
+    self.healthText = maps\mp\gametypes_zm\_hud_util::createFontString ("hudsmall", 1.5);
+    self.healthText maps\mp\gametypes_zm\_hud_util::setPoint ("CENTER", "CENTER", 100, 180);
+    self.healthText.label = &"Health: ^2";
+    while ( 1 ) {
+        self.healthText setValue(self.health);
+        wait 0.25;
     }
 }
 
