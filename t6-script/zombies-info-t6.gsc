@@ -25,10 +25,18 @@ healthCounter(){
     level endon( "end_game" );
     common_scripts\utility::flag_wait( "initial_blackscreen_passed" );
     self.healthText = maps\mp\gametypes_zm\_hud_util::createFontString ("hudsmall", 1.5);
-    self.healthText maps\mp\gametypes_zm\_hud_util::setPoint ("CENTER", "CENTER", 50, 200); // Ajusta las coordenadas aquí
+    self.healthText maps\mp\gametypes_zm\_hud_util::setPoint ("CENTER", "CENTER", 50, 200);
     self.healthText.label = &"Health: ^2";
     while ( 1 ) {
-        self.healthText setValue(self.health);
+        if (self.health > 75) {
+            self.healthText setText("^2" + self.health + "%"); // Green
+        } else if (self.health > 50) {
+            self.healthText setText("^3" + self.health + "%"); // Yellow
+        } else if (self.health > 25) {
+            self.healthText setText("^6" + self.health + "%"); // Orange
+        } else {
+            self.healthText setText("^1" + self.health + "%"); // Red
+        }
         wait 0.25;
     }
 }
@@ -46,7 +54,7 @@ zombie_counter(){
     self endon("disconnect");
     flag_wait( "initial_blackscreen_passed" );
     self.zombiecounter = createfontstring( "Objective", 1.7 );
-    self.zombiecounter setpoint( "CENTER", "CENTER", -50, 200 ); // Ajusta las coordenadas aquí
+    self.zombiecounter setpoint( "CENTER", "CENTER", -50, 200 );
     self.zombiecounter.alpha = 1;
     self.zombiecounter.hidewheninmenu = 1;
     self.zombiecounter.hidewhendead = 1;
