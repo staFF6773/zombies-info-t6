@@ -6,24 +6,25 @@
 
 init()
 {
-	level thread onPlayerConnect();
+    iprintlnbold("  Zombies Info Initialized Successfully  ");
+    level thread onPlayerConnect();
 }
 
 onPlayerConnect()
 {
-	for( ;; )
-	{
-		level waittill( "connecting", player );
-		player thread onplayerspawned();
-	}
+    for( ;; )
+    {
+        level waittill( "connecting", player );
+        player thread onplayerspawned();
+    }
 }
 
 onplayerspawned(){
-	self endon("disconnect");
-	self thread zombie_counter();
-	for(;;){
-		self waittill("spawned_player");
-	}
+    self endon("disconnect");
+    self thread zombie_counter();
+    for(;;){
+        self waittill("spawned_player");
+    }
 }
 
 zombie_counter(){
