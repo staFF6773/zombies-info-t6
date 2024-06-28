@@ -6,7 +6,6 @@
 
 init()
 {
-    println("^2*** Zombie info Script started ***");
 	level thread onPlayerConnect();
 }
 
@@ -22,7 +21,6 @@ onPlayerConnect()
 onplayerspawned(){
 	self endon("disconnect");
 	self thread zombie_counter();
-	self thread zombie_kills_counter();
 	for(;;){
 		self waittill("spawned_player");
 	}
@@ -46,22 +44,5 @@ zombie_counter(){
         }
         self.zombiecounter setvalue( level.zombie_total + get_current_zombie_count() );
         wait 0.05;
-    }
-}
-
-zombie_kills_counter(){
-    self.zombie_kills = 0;
-    self.zombiekillslabel = createfontstring("hudsmall", 1.0);
-    self.zombiekillslabel setpoint("CENTER", "CENTER", 0, 220);
-    self.zombiekillslabel.color = (1, 1, 1);
-    self.zombiekillslabel settext("Zombies Eliminated: 0");
-    self.zombiekillslabel.alpha = 1;
-    self.zombiekillslabel.hidewheninmenu = 1;
-    self.zombiekillslabel.hidewhendead = 1;
-    
-    for(;;){
-        self waittill("zombie_death");
-        self.zombie_kills++;
-        self.zombiekillslabel settext("Zombies Eliminated: " + self.zombie_kills);
     }
 }
