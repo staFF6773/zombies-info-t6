@@ -6,6 +6,8 @@ This script is a mod for **Call of Duty: Black Ops II - Plutonium** that display
 
 **Dowload:** https://github.com/staFF6773/zombies-info-t6/releases
 
+**Official support:** https://discord.gg/NbMhtfsgr6
+
 # Installation
 
 - Download the script and place the file in the scripts folder of your BO2 Plutonium installation **C:\Users\your-userAppData\Local\Plutonium\storage\t6\scripts\zm.**
