@@ -58,7 +58,7 @@ zombie_counter(){
     self.zombiecounter.alpha = 1;
     self.zombiecounter.hidewheninmenu = 1;
     self.zombiecounter.hidewhendead = 1;
-    self.zombiecounter.label = &"Zombies Left: ^1";
+    self.zombiecounter.label = &"Total Zombies: ^1";
     for(;;){
         if(isdefined(self.afterlife) && self.afterlife){
             self.zombiecounter.alpha = 0.2;
