@@ -4,7 +4,7 @@
 
 This script is a mod for **Call of Duty: Black Ops II - Plutonium** that displays on-screen information about the game the player is currently in. It uses various BO2 utility files to handle events and update the user interface in real time.
 
-**Dowload:**
+**Dowload:** https://github.com/staFF6773/zombies-info-t6/releases
 
 # Installation
 
